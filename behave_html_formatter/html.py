@@ -348,7 +348,7 @@ class HTMLFormatter(Formatter):
         self.actual = None
 
     def scenario_outline(self, outline):
-        self.scenario(self, outline)
+        self.scenario(outline)
         self.scenario_el.set("class", "scenario outline")
 
     def step(self, step):
@@ -534,8 +534,8 @@ class HTMLFormatter(Formatter):
                 embed_string = ET.SubElement(embed_div, "a")
                 embed_string.set("href", single_link[0])
                 embed_string.text = single_link[1]
-            breakline = ET.SubElement(embed_div, "br")
-            breakline = ET.SubElement(embed_div, "br")
+            ET.SubElement(embed_div, "br")
+            ET.SubElement(embed_div, "br")
 
     def embedding(self, mime_type, data, caption=None):
         if self.actual is not None:
